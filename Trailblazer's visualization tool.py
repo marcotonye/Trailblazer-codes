@@ -99,7 +99,7 @@ start_button = ttk.Button(graph, text="Graph", command=make_graph)
 start_button.grid(row=3, column=0, columnspan=2, padx=20, pady=20)
 
 # Clears all the boxes with a reset button
-reset_button = ttk.Button(graph, text="Reset", command=reset_boxes)
+reset_button = ttk.Button(graph, text="Clear", command=reset_boxes)
 reset_button.grid(row=3, column=1, padx=5, pady=20)
 
 # Start the Tkinter event loop
