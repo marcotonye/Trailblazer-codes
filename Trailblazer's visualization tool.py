@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import ttk
-from datetime import datetime
 from alpha_vantage.timeseries import TimeSeries
 from matplotlib import pyplot as plt
 import seaborn as sns
