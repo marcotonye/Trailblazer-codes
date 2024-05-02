@@ -8,7 +8,7 @@ import seaborn as sns
 ALPHA_VANTAGE_API_KEY = 'KCXVI4DZZZZDAGOP'
 
 
-# Processing but needs more maybe
+# Processing
 def data_process(data):
     data.fillna(data.mean(), inplace=True)
     return data
@@ -21,10 +21,8 @@ def make_graph():
 
     # Initialize Alpha Vantage TimeSeries using the API key
     ts = TimeSeries(key=ALPHA_VANTAGE_API_KEY, output_format='pandas')
-
     # collects the stock data
     data, meta_data = ts.get_daily(symbol=symbol, outputsize='full')
-
     # sorts in ascending order
     data.sort_index(inplace=True)
 
@@ -50,23 +48,25 @@ def reset_boxes():
 graph = tk.Tk()
 graph.title("Trailblazer's Visualization tool")
 
-# Creates and places labels and talk boxes
+# Creates the start date entry box and places label
 start_date = ttk.Label(graph, text="Start at - (YYYY-MM-DD):")
 start_date.grid(row=0, column=0, padx=10, pady=5)
 start_date_entry = ttk.Entry(graph, width=15)
 start_date_entry.grid(row=0, column=1, padx=10, pady=5)
 start_date_entry.insert(0, '')
 
+# Creates the end date entry box and places label
 end_date = ttk.Label(graph, text="End at - (YYYY-MM-DD):")
 end_date.grid(row=1, column=0, padx=10, pady=5)
 end_date_entry = ttk.Entry(graph, width=15)
 end_date_entry.grid(row=1, column=1, padx=10, pady=5)
 end_date_entry.insert(0, '')
 
+# Places the symbol entry box and the label
 # Labels - Google = GOOGL, Microsoft = MSFT, Amazon = AMZN
-symbol_label = ttk.Label(graph, text="Pick the stock:")
+symbol_label = ttk.Label(graph, text="Pick the stock\nExamples: AAPL, GME, MSFT:")
 symbol_label.grid(row=2, column=0, padx=10, pady=5)
-symbol_set = ttk.Entry(graph, width=10)
+symbol_set = ttk.Entry(graph, width=15)
 symbol_set.grid(row=2, column=1, padx=10, pady=5)
 # Default option
 symbol_set.insert(0, '')
@@ -75,7 +75,7 @@ symbol_set.insert(0, '')
 start_button = ttk.Button(graph, text="Graph", command=make_graph)
 start_button.grid(row=3, column=0, columnspan=2, padx=20, pady=20)
 
-# Clears all the boxes with a reset button
+# Clears all the start and end date boxes with a clear button
 reset_button = ttk.Button(graph, text="Clear", command=reset_boxes)
 reset_button.grid(row=3, column=1, padx=5, pady=20)
 
