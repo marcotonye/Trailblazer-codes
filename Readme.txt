@@ -1,4 +1,4 @@
-Introduction:
+Description
 Welcome to the Trailblazers visualization tool. This tool has been created to collect the stock data using an API such as Alpha Vantage. Users are able to input the start date and the end date for the program and enter a stock symbol that will be used to pick what companines stock you want to view. These inputs will then be used to draw a graph of the stock prices.
 
 Features:
