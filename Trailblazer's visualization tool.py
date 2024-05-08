@@ -13,13 +13,14 @@ from io import StringIO
 import pandas as pd
 from tkinter import messagebox
 
-#NEEDS pip install tkcalendar
+# NEEDS pip install tkcalendar
 
 
 # Processing but needs more maybe
 def data_process(data):
     data.fillna(data.mean(), inplace=True)
     return data
+
 
 def appropriate_formats_for_UI():
     pass
@@ -46,7 +47,7 @@ def checking_correct_times():
 
 
 def api_request(type_link):
-    #Alpha api and api key 
+    # Alpha api and api key
     company = symbol_set.get()
     start_date = cal.get()
     end_date = end_date_entry.get()
@@ -77,12 +78,10 @@ def api_request(type_link):
         return data
 
 
-
-
-
 def api_appropriate_formats():
     test = api_request(api_picker.get())
     return test
+
 
 def make_graph():
 
@@ -118,7 +117,6 @@ api_picker = ttk.Combobox(graph, values=['Alpha Vantage'], width=18, textvariabl
 api_picker.grid(row=0, column=1, padx=10, pady=5)
 
 
-
 # Creates and places labels and talk boxes
 start_date = ttk.Label(graph, text="Start at - (MM-DD-YY):")
 start_date.grid(row=1, column=0, padx=10, pady=5)
@@ -147,8 +145,8 @@ start_button = ttk.Button(graph, text="Graph", command=make_graph)
 start_button.grid(row=4, column=0, columnspan=2, padx=20, pady=20)
 
 # Clears all the boxes with a reset button
-#reset_button = ttk.Button(graph, text="Clear", command=reset_boxes)
-#reset_button.grid(row=4, column=1, padx=5, pady=20)
+# reset_button = ttk.Button(graph, text="Clear", command=reset_boxes)
+# reset_button.grid(row=4, column=1, padx=5, pady=20)
 
 # Start the Tkinter event loop
 graph.mainloop()
