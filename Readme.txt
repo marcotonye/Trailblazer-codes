@@ -9,10 +9,12 @@ Features:
 Instuctions on how to use: 
 
 1.Before this program can be used, the required modules must be installed:
-	1.Matplot
+	1.Matplotlib
 	2.Seaborn
 	3.tkinter
 	4.alpha vantage timeseries
+	5.tkcalender
+	6.datetime
 
 2.register for an API key on the API websites and insert your API key into the program.
 
